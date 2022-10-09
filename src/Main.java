@@ -2,8 +2,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// code
-
+		Mail email = new Mail("Acir", "Rudson");
 	}
 
 }
