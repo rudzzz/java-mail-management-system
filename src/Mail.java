@@ -16,6 +16,8 @@ public class Mail {
 		this.department = Department(); 
 	}
 	
+	
+	
 	private String Department() {
 		System.out.println("What is the deparament?");
 		System.out.println("1 - Development\n2 - Sales\n3 - Accounting");
