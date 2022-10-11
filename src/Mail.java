@@ -6,6 +6,7 @@ public class Mail {
 	private String password;
 	private String department;
 	private String alternateEmail;
+	private int passwordLength = 8;
 	
 	public Mail(String firstName, String lastName) {
 		this.firstName = firstName;
@@ -14,9 +15,11 @@ public class Mail {
 		
 		//method to ask the employees department
 		this.department = Department(); 
+		
+		//method to get a random password
+		this.password = getRandomPassword(passwordLength);
+		System.out.println("The password is: " + this.password);
 	}
-	
-	
 	
 	private String Department() {
 		System.out.println("What is the deparament?");
@@ -42,5 +45,14 @@ public class Mail {
 		return choice;
 	}
 
+	private String getRandomPassword(int length) {
+		String possibilities = "ABCDEFJHIJKLMNOPQRSTUVXWYZ!@#$%&*+-/*()";
+		char[] password = new char[length];
+		for(int i = 0; i < length; i++) {
+			int random = (int) (Math.random() * possibilities.length());
+			password[i] = possibilities.charAt(random);
+		}
+		return new String(password);
+	}
 
 }
