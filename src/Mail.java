@@ -7,6 +7,8 @@ public class Mail {
 	private String department;
 	private String alternateEmail;
 	private int passwordLength = 8;
+	private String email;
+	private String company = "mycompany.com";
 	
 	public Mail(String firstName, String lastName) {
 		this.firstName = firstName;
@@ -18,7 +20,11 @@ public class Mail {
 		
 		//method to get a random password
 		this.password = getRandomPassword(passwordLength);
-		System.out.println("The password is: " + this.password);
+		
+		//generate email
+		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + company;
+		System.out.println("\nYor email is: \n" + email + "\n");
+		System.out.println("The password is: \n" + this.password);
 	}
 	
 	private String Department() {
@@ -29,20 +35,20 @@ public class Mail {
 		
 		switch(choice) {
 			case "1":
-				System.out.println("Development"); 
+				department = "development"; 
 				break;
 			case "2":
-				System.out.println("Sales"); 
+				department = "sales"; 
 				break;
 			case "3":
-			System.out.println("Accounting"); 
+				department = "accounting"; 
 				break;
 			default:
 				System.out.println("Invalid Command!"); 
 				break;
 		}
 		scanner.close();
-		return choice;
+		return department;
 	}
 
 	private String getRandomPassword(int length) {
