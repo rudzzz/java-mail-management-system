@@ -51,6 +51,7 @@ public class Mail {
 		return department;
 	}
 
+	// method to generate a random password 
 	private String getRandomPassword(int length) {
 		String possibilities = "ABCDEFJHIJKLMNOPQRSTUVXWYZ!@#$%&*+-/*0123456789";
 		char[] password = new char[length];
@@ -61,12 +62,21 @@ public class Mail {
 		return new String(password);
 	}
 	
+	// method to set a alternate email
 	public void setAlternateEmail(String alternateEmail) {
 		this.alternateEmail = alternateEmail;
 	}
 	
+	// method to get the generated email
 	public String getalternateEmail() {
 		return alternateEmail;
 	}
+	
+	public void changePassword(String password) {
+		this.password = password;
+	}
 
+	public String getPassword() {
+		return password;
+	}
 }
