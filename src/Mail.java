@@ -23,7 +23,7 @@ public class Mail {
 		
 		//generate email
 		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + company;
-		System.out.println("\nYor email is: \n" + email + "\n");
+		System.out.println("\nYor email is: \n\n" + email);
 		System.out.println("The password is: \n" + this.password);
 	}
 	
@@ -52,13 +52,21 @@ public class Mail {
 	}
 
 	private String getRandomPassword(int length) {
-		String possibilities = "ABCDEFJHIJKLMNOPQRSTUVXWYZ!@#$%&*+-/*()";
+		String possibilities = "ABCDEFJHIJKLMNOPQRSTUVXWYZ!@#$%&*+-/*0123456789";
 		char[] password = new char[length];
 		for(int i = 0; i < length; i++) {
 			int random = (int) (Math.random() * possibilities.length());
 			password[i] = possibilities.charAt(random);
 		}
 		return new String(password);
+	}
+	
+	public void setAlternateEmail(String alternateEmail) {
+		this.alternateEmail = alternateEmail;
+	}
+	
+	public String getalternateEmail() {
+		return alternateEmail;
 	}
 
 }
