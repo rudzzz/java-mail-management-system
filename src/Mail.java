@@ -13,18 +13,18 @@ public class Mail {
 	public Mail(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		System.out.println("Email created: " + this.firstName + "." + this.lastName);
+		System.out.println("\nNew employee: " + this.firstName + "." + this.lastName + "\n");
 		
-		//method to ask the employees department
+		// method to ask the employees department
 		this.department = Department(); 
 		
 		//method to get a random password
 		this.password = getRandomPassword(passwordLength);
 		
-		//generate email
+		// generate email
 		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + company;
-		System.out.println("\nYor email is: \n\n" + email);
-		System.out.println("The password is: \n" + this.password);
+		//System.out.println("\nYor email is: \n\n" + email);
+		//System.out.println("The password is: \n" + this.password);
 	}
 	
 	private String Department() {
@@ -72,11 +72,18 @@ public class Mail {
 		return alternateEmail;
 	}
 	
+	//method to change password
 	public void changePassword(String password) {
 		this.password = password;
 	}
 
+	// method to get the password
 	public String getPassword() {
 		return password;
+	}
+	
+	// method to display the email and password
+	public String showInformation() {
+		return "\nName: " + firstName + " " + lastName + "\nEmail: " + email + "\nYour password: " + password;
 	}
 }
