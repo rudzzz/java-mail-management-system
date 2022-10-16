@@ -84,6 +84,11 @@ public class Mail {
 	
 	// method to display the email and password
 	public String showInformation() {
-		return "\nName: " + firstName + " " + lastName + "\nEmail: " + email + "\nYour password: " + password;
+		if(department != null) {
+			return "\nName: " + firstName + " " + lastName + "\nEmail: " + email + "\nYour password: " + password;
+		}
+		else {
+			return "";
+		}
 	}
 }
